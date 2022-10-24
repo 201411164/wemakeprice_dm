@@ -59,7 +59,7 @@ def password_check():
             userPassword = input("비밀번호를 입력하세요: ")
 
 
-# password_check()
+password_check()
 launch_db()
 # dm.login_cnt_update() 위메프에서는 사용안함
 form = resource_path('instagram_dm.ui')

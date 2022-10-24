@@ -194,10 +194,10 @@ def login_get_one_account():
         conn = sqlite3.connect("wemakeprice.db", isolation_level=None)
         cur = conn.cursor()
 
-        print('로그인 계정 1개 정보 가져오는 중')
+        print('위메프는 인스타와 달리 밴 관리 X, 로그인 계정 1개 정보 가져오는 중')
 
         cur.execute(
-            "SELECT IFNULL(MAX(login_username), ''), login_password, daily_sentcnt FROM login_account where is_banned = 'N' limit 1")
+            "SELECT IFNULL(MAX(login_username), ''), login_password, daily_sentcnt FROM login_account limit 1")
         row = cur.fetchone()
         cur.close()
         if row[0] != '':
@@ -574,8 +574,9 @@ def dm_start(model):
                 for keyword in keyword_list:
                     print('계정수집 시작')
 
-                    pageNum = 1
+                    pageNum = 0
                     for i in range(1, 100):
+                        pageNum = pageNum + 1
                         url = f'https://search.wemakeprice.com/search?searchType=DEFAULT&_service=2&_type=3&search_cate=top&keyword={keyword}&_no=6&page={str(pageNum)}'
                         print(url)
                         driver.get(url)
