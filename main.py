@@ -72,6 +72,8 @@ class MyWindow(QtWidgets.QMainWindow, QMessageBox, form_class):
         self.setupUi(self)
         self.pushButton.clicked.connect(self.start_btn)
         self.pushButton_2.clicked.connect(self.refresh_btn)
+        self.horizontalSlider.valueChanged.connect(self.slider_value)
+        self.horizontalSlider2.valueChanged.connect(self.slider_value2)
         # self.pushButton_2.clicked.connect(self.continue_btn)
 
         try:
@@ -86,6 +88,15 @@ class MyWindow(QtWidgets.QMainWindow, QMessageBox, form_class):
             print(e)
             print('DB 확인되지 않음, DB 생성 진행합니다.')
 
+    def slider_value(self):
+        #Horizontal Slider의 시그널 이용 - Horizontal Slider의 값이 변경되면 Label에 값을 표시
+        text_to_set = f"수집 시작 페이지 번호 (현재 :{str(self.horizontalSlider.value())})"
+        self.sliderLabel.setText(text_to_set)
+
+    def slider_value2(self):
+        #Horizontal Slider의 시그널 이용 - Horizontal Slider2의 값이 변경되면 Label에 값을 표시
+        text_to_set = f"수집 종료 페이지 번호 (현재 :{str(self.horizontalSlider2.value())})"
+        self.sliderLabel2.setText(text_to_set)
 
     def generate_menu(self, pos):
         # 빈공간에서
@@ -223,11 +234,16 @@ class MyWindow(QtWidgets.QMainWindow, QMessageBox, form_class):
         cur.close()
 
     def start_btn(self):
-        qqq = threading.Thread(target=dm.dm_start, args=(model,))
-        qqq.start()
-        self.pushButton.setDisabled(True)
-        time.sleep(5)
-        self.pushButton.setEnabled(True)
+
+        if int(self.horizontalSlider.value()) > int(self.horizontalSlider2.value()):
+            QMessageBox.about(self, '페이지 입력 오류', '수집 종료 페이지는 수집 시작 페이지와 같거나 커야 합니다.')
+            time.sleep(3)
+        else:
+            qqq = threading.Thread(target=dm.dm_start, args=(model,))
+            qqq.start()
+            self.pushButton.setDisabled(True)
+            time.sleep(5)
+            self.pushButton.setEnabled(True)
 
     def refresh_btn(self):
         self.load_data()

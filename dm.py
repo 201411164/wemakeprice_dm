@@ -440,7 +440,7 @@ def logout(driver):
 def dm_send(login_username, d, k, message, driver, model):
     curCount = 0
     try:
-
+        newMessage = ''
         #URL이 텍스트에 포함되어있으면 REGEX를 이용해서 추출하기
         if message.find('http') >= 0:
             urlLink = re.findall(r'(https?://\S+)', message)[0] #한 텍스트에 링크가 여러 개 들어 있더라도 링크는 하나만 추출하기
@@ -571,11 +571,12 @@ def dm_start(model):
                 account_list = []
                 element_box = []
                 matching_keyword_list = []
-                for keyword in keyword_list:
-                    print('계정수집 시작')
 
-                    pageNum = 0
-                    for i in range(1, 100):
+
+                for keyword in keyword_list:
+                    print('계정수집 시작, 각 키워드당 '+ str(model.horizontalSlider.value()) +'페이지 부터 ' + str(model.horizontalSlider2.value())+'페이지 까지 수집을 시작합니다.')
+                    pageNum = int(model.horizontalSlider.value())-1
+                    for i in range(int(model.horizontalSlider.value()), int(model.horizontalSlider2.value())):
                         pageNum = pageNum + 1
                         url = f'https://search.wemakeprice.com/search?searchType=DEFAULT&_service=2&_type=3&search_cate=top&keyword={keyword}&_no=6&page={str(pageNum)}'
                         print(url)
@@ -614,10 +615,9 @@ def dm_start(model):
                             time.sleep(3)
                             continue
 
-
                         for k in range(0, len(urlList)):
 
-                            print('현재 페이지 ' + str(len(urlList))+'개의 링크 중 '+str(k)+'번째 링크 접속 시도 합니다.')
+                            print('현재 페이지 번호 : ' + str(pageNum) + ', 현재 페이지의 ' + str(len(urlList))+'개의 링크 중 '+str(k)+'번째 링크 접속 시도 합니다.')
 
                             try:
                                 url = urlList[k]

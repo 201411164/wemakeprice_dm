@@ -23,7 +23,7 @@
    </font>
   </property>
   <property name="windowTitle">
-   <string>인스타 DM 발송_5.0_창 오픈 방식 </string>
+   <string>위메프 DM 발송_2.0_Beta_창 오픈 방식 </string>
   </property>
   <property name="toolTip">
    <string extracomment="4.5버전 - 인터넷 사용기록(쿠키, 캐시 값) 지우는 기능 추가 - 생일 인증 통과 가능"/>
@@ -45,7 +45,7 @@ This worke</string>
     <property name="geometry">
      <rect>
       <x>420</x>
-      <y>260</y>
+      <y>270</y>
       <width>211</width>
       <height>21</height>
      </rect>
@@ -76,7 +76,7 @@ This worke</string>
     <property name="geometry">
      <rect>
       <x>420</x>
-      <y>460</y>
+      <y>470</y>
       <width>211</width>
       <height>16</height>
      </rect>
@@ -131,7 +131,7 @@ border-radius : 10px;</string>
     <property name="geometry">
      <rect>
       <x>420</x>
-      <y>40</y>
+      <y>50</y>
       <width>211</width>
       <height>21</height>
      </rect>
@@ -175,7 +175,7 @@ border-radius : 10px;</string>
     <property name="geometry">
      <rect>
       <x>1090</x>
-      <y>170</y>
+      <y>200</y>
       <width>225</width>
       <height>37</height>
      </rect>
@@ -199,7 +199,7 @@ border-radius : 10px;</string>
     <property name="geometry">
      <rect>
       <x>1090</x>
-      <y>390</y>
+      <y>420</y>
       <width>151</width>
       <height>181</height>
      </rect>
@@ -226,7 +226,7 @@ border-radius : 10px;</string>
     <property name="geometry">
      <rect>
       <x>1250</x>
-      <y>390</y>
+      <y>420</y>
       <width>151</width>
       <height>181</height>
      </rect>
@@ -253,7 +253,7 @@ border-radius : 10px;</string>
     <property name="geometry">
      <rect>
       <x>1170</x>
-      <y>590</y>
+      <y>620</y>
       <width>231</width>
       <height>51</height>
      </rect>
@@ -286,7 +286,7 @@ QPushButton#searchButton:hover {
     <property name="geometry">
      <rect>
       <x>1120</x>
-      <y>70</y>
+      <y>130</y>
       <width>151</width>
       <height>37</height>
      </rect>
@@ -313,7 +313,7 @@ QPushButton#searchButton:hover {
     <property name="geometry">
      <rect>
       <x>1120</x>
-      <y>110</y>
+      <y>170</y>
       <width>261</width>
       <height>29</height>
      </rect>
@@ -343,7 +343,7 @@ QPushButton#searchButton:hover {
     <property name="geometry">
      <rect>
       <x>1250</x>
-      <y>220</y>
+      <y>250</y>
       <width>151</width>
       <height>161</height>
      </rect>
@@ -370,7 +370,7 @@ QPushButton#searchButton:hover {
     <property name="geometry">
      <rect>
       <x>1090</x>
-      <y>220</y>
+      <y>250</y>
       <width>151</width>
       <height>161</height>
      </rect>
@@ -397,7 +397,7 @@ QPushButton#searchButton:hover {
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>70</y>
+      <y>80</y>
       <width>1041</width>
       <height>181</height>
      </rect>
@@ -425,7 +425,7 @@ QPushButton#searchButton:hover {
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>290</y>
+      <y>300</y>
       <width>1041</width>
       <height>161</height>
      </rect>
@@ -450,7 +450,7 @@ QPushButton#searchButton:hover {
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>490</y>
+      <y>500</y>
       <width>1041</width>
       <height>141</height>
      </rect>
@@ -475,7 +475,7 @@ QPushButton#searchButton:hover {
     <property name="geometry">
      <rect>
       <x>1090</x>
-      <y>590</y>
+      <y>620</y>
       <width>81</width>
       <height>51</height>
      </rect>
@@ -512,7 +512,7 @@ QPushButton#searchButton:hover {
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>30</y>
+      <y>40</y>
       <width>1071</width>
       <height>631</height>
      </rect>
@@ -532,7 +532,7 @@ border-radius : 10px;</string>
     <property name="geometry">
      <rect>
       <x>1090</x>
-      <y>580</y>
+      <y>610</y>
       <width>311</width>
       <height>61</height>
      </rect>
@@ -546,6 +546,116 @@ border-radius : 10px;</string>
     </property>
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+   <widget class="QSlider" name="horizontalSlider">
+    <property name="geometry">
+     <rect>
+      <x>1110</x>
+      <y>50</y>
+      <width>261</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>1</number>
+    </property>
+    <property name="maximum">
+     <number>100</number>
+    </property>
+    <property name="pageStep">
+     <number>10</number>
+    </property>
+    <property name="value">
+     <number>1</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <property name="tickPosition">
+     <enum>QSlider::TicksBelow</enum>
+    </property>
+    <property name="tickInterval">
+     <number>5</number>
+    </property>
+   </widget>
+   <widget class="QSlider" name="horizontalSlider2">
+    <property name="geometry">
+     <rect>
+      <x>1110</x>
+      <y>110</y>
+      <width>261</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>1</number>
+    </property>
+    <property name="maximum">
+     <number>100</number>
+    </property>
+    <property name="pageStep">
+     <number>10</number>
+    </property>
+    <property name="value">
+     <number>5</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <property name="tickPosition">
+     <enum>QSlider::TicksBelow</enum>
+    </property>
+    <property name="tickInterval">
+     <number>5</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="sliderLabel">
+    <property name="geometry">
+     <rect>
+      <x>1120</x>
+      <y>10</y>
+      <width>251</width>
+      <height>37</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Noto Sans CJK KR Black</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string extracomment="탐색 시작 페이지 번호를 지정합니다. 최소값 : 1, 최대값 : 100">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;멀티 키워드를 지원합니다. 입력값은 ,(콤마)로 구분합니다. (띄어쓰기 없이)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>수집 시작 페이지 번호 (현재 :1)</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="sliderLabel2">
+    <property name="geometry">
+     <rect>
+      <x>1120</x>
+      <y>70</y>
+      <width>241</width>
+      <height>37</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Noto Sans CJK KR Black</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string extracomment="탐색 시작 페이지 번호를 지정합니다. 최소값 : 1, 최대값 : 100">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;멀티 키워드를 지원합니다. 입력값은 ,(콤마)로 구분합니다. (띄어쓰기 없이)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>수집 종료 페이지 번호 (현재 :5)</string>
     </property>
    </widget>
    <zorder>frame_2</zorder>
@@ -567,6 +677,10 @@ border-radius : 10px;</string>
    <zorder>tableWidget2</zorder>
    <zorder>tableWidget3</zorder>
    <zorder>pushButton_2</zorder>
+   <zorder>horizontalSlider</zorder>
+   <zorder>horizontalSlider2</zorder>
+   <zorder>sliderLabel</zorder>
+   <zorder>sliderLabel2</zorder>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
